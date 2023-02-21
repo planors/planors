@@ -87,3 +87,6 @@ model Page {
 }
 
 // TODO: Add ability to add "contributors" to a wiki and their profiles show up on the bottom of the wiki page like in GitHub and when user clicks on their profile, it takes to the github page of theirs
+// TODO: Add revision history to wiki pages
+// TODO: Add ablility to choose where to save (db, github, selfhost)
+// TODO: "issues" for wiki pages
