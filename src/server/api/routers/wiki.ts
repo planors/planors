@@ -33,6 +33,10 @@ export const wikiRouter = createTRPCRouter({
         where: {
           id,
         },
+        include: {
+          author: true,
+          pages: true,
+        },
       });
       return wiki;
     }),
