@@ -6,7 +6,8 @@ import {
   protectedProcedure,
 } from "~/server/api/trpc";
 
-export const exampleRouter = createTRPCRouter({
+export const wikiRouter = createTRPCRouter({
+  /*
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
@@ -22,4 +23,17 @@ export const exampleRouter = createTRPCRouter({
   getSecretMessage: protectedProcedure.query(() => {
     return "you can now see this secret message!";
   }),
+  */
+  // Get single wiki
+  get: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const { id } = input;
+      const wiki = await ctx.prisma.wiki.findUnique({
+        where: {
+          id,
+        },
+      });
+      return wiki;
+    }),
 });
