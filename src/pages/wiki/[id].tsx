@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { api } from "../../utils/api";
+import ReactMarkdown from "react-markdown";
 
 export default function WikiPage() {
   const router = useRouter();
@@ -17,9 +18,9 @@ export default function WikiPage() {
   if (!wiki) return <div>no wiki found</div>;
 
   return (
-    <div>
+    <main>
       <h1>Wiki Page</h1>
-      <p>{wiki.intro}</p>
-    </div>
+      <ReactMarkdown className="prose prose-sm">{wiki.intro}</ReactMarkdown>
+    </main>
   );
 }
