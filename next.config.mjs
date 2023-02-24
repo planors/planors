@@ -9,7 +9,6 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-
   /**
    * If you have the "experimental: { appDir: true }" setting enabled, then you
    * must comment the below `i18n` config out.
@@ -19,11 +18,6 @@ const config = {
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
-  },
-  experimental: {
-    fontLoaders: [
-      { loader: "@next/font/google", options: { subsets: ["latin"] } },
-    ],
   },
 };
 export default config;
