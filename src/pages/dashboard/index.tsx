@@ -65,7 +65,9 @@ export default function Dashboard() {
           <Link href={`wiki/${wiki.id}`}>
             <h4>{wiki.title}</h4>
           </Link>
-          <button onClick={() => handleDelete(wiki.id)}>Delete</button>
+          <button key={wiki.id} onClick={() => handleDelete(wiki.id)}>
+            Delete
+          </button>
           {mutationError && <div>error: {mutationError.message}</div>}
           {isMutating && <div>deleting...</div>}
         </div>
