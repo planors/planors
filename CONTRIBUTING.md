@@ -2,6 +2,8 @@
 
 Every contribution will help the project, even if it's just a small wording fix or a big change in core :) 
 
+- Make sure that there are no existing issues related to your problem before creating a new issue (check closed ones too), and the same goes for PRs as well
+
 > TODO:s are in the Github Projects tab 😉
 
 ## Issues
