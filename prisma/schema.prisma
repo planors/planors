@@ -59,6 +59,7 @@ model VerificationToken {
 }
 
 // Add db.Text annotations when mysql
+
 model Wiki {
   id        String   @id @default(cuid())
   title     String
@@ -68,6 +69,8 @@ model Wiki {
   author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId  String
   pages     Page[]
+  github    String? // @db.Text - Link to github repo for wiki 
+  website   String? // @db.Text - Link to website for wiki 
 
   @@unique([title])
   @@index([authorId], name: "authorId")

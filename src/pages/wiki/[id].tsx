@@ -50,10 +50,12 @@ export default function WikiPage() {
           <hr className="mt-8 mb-8" />
           <WikiInfo />
         </main>
-        <div className="sticky top-0 right-0 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <WikiPages />
           <WikiSections />
           <WikiActions />
+          <span>github - {wiki.github}</span>
+          <span>web - {wiki.website}</span>
         </div>
       </div>
     </main>
