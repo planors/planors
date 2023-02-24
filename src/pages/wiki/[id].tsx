@@ -2,6 +2,11 @@ import { useRouter } from "next/router";
 import { api } from "../../utils/api";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  preload: false,
+});
 
 export default function WikiPage() {
   const router = useRouter();
@@ -19,7 +24,7 @@ export default function WikiPage() {
   if (!wiki) return <div>no wiki found</div>;
 
   return (
-    <main className="mx-auto my-6 max-w-7xl">
+    <main className="mx-auto my-6 max-w-7xl" style={inter.style}>
       <div className="flex flex-row items-start justify-between pb-2">
         <div>
           <h1 className="text-4xl font-semibold opacity-80">{wiki.title}</h1>
