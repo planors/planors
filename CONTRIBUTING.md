@@ -52,5 +52,10 @@ npx prisma db push &&
 npm run dev
 ```
 
+### Project Overview
+
+The project is built on top of the [T3 Stack](https://create.t3.gg/) so when contributing you should see their docs to get some sense of the project.
+- TODO: PROJECT OVERVIEW MORE STUFF
+
 - TODO: ADD MORE INSTRUCTIONS ABOUT MAKING THE PR
-- TODO: PROJECT OVERVIEW
+
