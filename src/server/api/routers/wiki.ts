@@ -7,6 +7,29 @@ import {
 } from "~/server/api/trpc";
 
 export const wikiRouter = createTRPCRouter({
+  // For the dashboard
+  getWiki: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const { id } = input;
+      const wiki = await ctx.prisma.wiki.findUnique({
+        where: {
+          id,
+        },
+        include: {
+          author: true,
+          pages: true,
+        },
+      });
+      if (!wiki) {
+        throw new Error("Wiki not found");
+      }
+      if (wiki.authorId !== ctx.session.user.id) {
+        throw new Error("You are not the author of this wiki");
+      }
+      return wiki;
+    }),
+
   getWikisByAuthor: publicProcedure
     .input(z.object({ authorId: z.string() }))
     .query(async ({ ctx, input }) => {

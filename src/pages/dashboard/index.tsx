@@ -62,7 +62,7 @@ export default function Dashboard() {
           key={wiki.id}
           className="flex flex-row items-center justify-between py-4"
         >
-          <Link href={`wiki/${wiki.id}`}>
+          <Link href={`dashboard/${wiki.id}`}>
             <h4>{wiki.title}</h4>
           </Link>
           <button key={wiki.id} onClick={() => handleDelete(wiki.id)}>
