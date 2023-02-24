@@ -10,6 +10,36 @@ export default function Dashboard() {
     authorId: session?.user?.id as string,
   });
 
+  const context = api.useContext();
+
+  const {
+    mutate,
+    isLoading: isMutating,
+    error: mutationError,
+  } = api.wiki.delete.useMutation({
+    onSuccess: () => {
+      context
+        .invalidate()
+        .then(() => {
+          console.log("invalidated");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  });
+
+  const handleDelete = (id: string) => {
+    if (isMutating) return;
+    mutate({
+      id: id,
+    });
+  };
+
+  if (status === "loading") {
+    return <div>loading...</div>;
+  }
+
   return (
     <main>
       <h1>Dashboard</h1>
@@ -28,9 +58,17 @@ export default function Dashboard() {
       {isLoading && <div>loading...</div>}
       {error && <div>error: {error.message}</div>}
       {data?.map((wiki) => (
-        <Link key={wiki.id} href={`wiki/${wiki.id}`}>
-          <h4>{wiki.title}</h4>
-        </Link>
+        <div
+          key={wiki.id}
+          className="flex flex-row items-center justify-between py-4"
+        >
+          <Link href={`wiki/${wiki.id}`}>
+            <h4>{wiki.title}</h4>
+          </Link>
+          <button onClick={() => handleDelete(wiki.id)}>Delete</button>
+          {mutationError && <div>error: {mutationError.message}</div>}
+          {isMutating && <div>deleting...</div>}
+        </div>
       ))}
     </main>
   );
