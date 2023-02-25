@@ -63,15 +63,23 @@ export const wikiRouter = createTRPCRouter({
     }),
   create: protectedProcedure
     .input(
-      z.object({ title: z.string(), intro: z.string(), authorId: z.string() })
+      z.object({
+        title: z.string(),
+        intro: z.string(),
+        authorId: z.string(),
+        github: z.string(),
+        website: z.string(),
+      })
     )
     .mutation(async ({ ctx, input }) => {
-      const { title, intro } = input;
+      const { title, intro, website, github } = input;
       const wiki = await ctx.prisma.wiki.create({
         data: {
           authorId: input.authorId,
           title,
           intro,
+          website,
+          github,
         },
       });
       return wiki;
