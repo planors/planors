@@ -1,4 +1,4 @@
-**WIP**
+**WIP** 🚧
 
 Brief explanation: This is an app for creating interactive wikis for projects or any other things. This project is in the very early stages of development, so there are not many features yet. The `projects` tab on GitHub lists all the planned features. Some of the planned features:
 
