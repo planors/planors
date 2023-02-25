@@ -47,7 +47,12 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  wikis         Wiki[]
+  // Custom
+  bio           String? // @db.text
+  website       String? // @db.text
+  github        String?
+
+  wikis Wiki[]
 }
 
 model VerificationToken {
