@@ -48,6 +48,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   wikis         Wiki[]
+  maintainerOf  Wiki[]    @relation("maintainers")
 }
 
 model VerificationToken {
@@ -61,16 +62,17 @@ model VerificationToken {
 // Add db.Text annotations when mysql
 
 model Wiki {
-  id        String   @id @default(cuid())
-  title     String
-  intro     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
-  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  authorId  String
-  pages     Page[]
-  github    String? // @db.Text - Link to github repo for wiki 
-  website   String? // @db.Text - Link to website for wiki 
+  id          String   @id @default(cuid())
+  title       String
+  intro       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId    String
+  pages       Page[]
+  github      String? // @db.Text - Link to github repo for wiki 
+  website     String? // @db.Text - Link to website for wiki 
+  maintainers User[]   @relation("maintainers")
 
   @@unique([title])
   @@index([authorId], name: "authorId")
