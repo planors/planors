@@ -8,4 +8,4 @@ Brief explanation: This is an app for creating interactive wikis for projects or
 - Store to GitHub repository or the database
 - [Others planned features](https://github.com/users/LukaHietala/projects/9?query=is%3Aopen+sort%3Aupdated-desc)
 
-Contributing guidelines [here](https://github.com/LukaHietala/create-wiki/blob/main/CONTRIBUTING.md)
+Contributing guidelines [here](https://github.com/LukaHietala/create-wiki/blob/main/CONTRIBUTING.md) (a good way to help the project is by fixing small things marked as `TODO` or `FIXME`)
