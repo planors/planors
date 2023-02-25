@@ -1,5 +1,6 @@
 import { createTRPCRouter } from "~/server/api/trpc";
 import { wikiRouter } from "~/server/api/routers/wiki";
+import { userRouter } from "./routers/user";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { wikiRouter } from "~/server/api/routers/wiki";
  */
 export const appRouter = createTRPCRouter({
   wiki: wikiRouter,
+  user: userRouter,
 });
 
 // export type definition of API
