@@ -27,6 +27,7 @@ export default function WikiPage() {
     <main className="mx-auto my-6 max-w-7xl" style={inter.style}>
       <div className="flex flex-row items-start justify-between pb-2">
         <div>
+          <Link href="/">Dashboard</Link>
           <h1 className="text-4xl font-semibold opacity-80">{wiki.title}</h1>
           <p className="text-sm text-gray-500">
             Created by {wiki.author.name} on {wiki.createdAt.toISOString()} |
