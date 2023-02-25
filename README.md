@@ -5,7 +5,7 @@ Brief explanation: This is an app for creating interactive wikis for projects or
 - Create customizable and interactive wikis for users (not just borning text)
 - Diagrams (w/ Excalidraw)
 - Revisions
-- Stats
+- View stats of your wikis
 - Display stats (like in [stateofjs.com](https://stateofjs.com/en-us/))
 - Roadmap planning
 - Ability to selfhost so you can integrate easily with existing sites
