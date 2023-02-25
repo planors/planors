@@ -9,11 +9,10 @@ export default function CreateWikiPage() {
   const { data: session } = useSession();
 
   const { mutate } = api.wiki.create.useMutation();
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log(title, intro);
-    mutate({ title, intro, authorId: session!.user.id });
+    mutate({ title, intro, authorId: session?.user.id as string });
   };
   return (
     <form>
