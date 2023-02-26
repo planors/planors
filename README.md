@@ -8,6 +8,7 @@ Brief explanation: This is an app for creating interactive wikis for projects or
 - View stats of your wikis
 - Display stats (like in [stateofjs.com](https://stateofjs.com/en-us/))
 - Roadmap planning
+- GitHub integration
 - Ability to selfhost so you can integrate easily with existing sites
 - Collaboration
 - Store to GitHub repository or the database
