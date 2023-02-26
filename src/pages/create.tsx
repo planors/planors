@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { api } from "../utils/api";
 import { useSession } from "next-auth/react";
+import Modal from "~/components/create/Modal";
+import { AnimatePresence } from "framer-motion";
 
 export default function CreateWikiPage() {
   const [title, setTitle] = useState("");
   const [intro, setIntro] = useState("");
+
+  const [modalOpen, setModalOpen] = useState(false);
 
   const { data: session } = useSession();
 
@@ -16,14 +20,22 @@ export default function CreateWikiPage() {
   };
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center text-neutral-800">
+      <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
+        {modalOpen && <Modal handleClose={() => setModalOpen(false)} />}
+      </AnimatePresence>
       <div className="rounded-md border border-neutral-300 py-8 px-6">
         <h1 className="mb-2 text-2xl font-bold">Create a new wiki</h1>
         <p className="mb-4 text-neutral-700">
           A wiki is a collection of pages that anyone can edit. If you already
           have wiki, you can{" "}
-          <a href="#" className="text-blue-600">
+          <button
+            className="text-blue-600"
+            onClick={() =>
+              modalOpen ? setModalOpen(false) : setModalOpen(true)
+            }
+          >
             import it
-          </a>{" "}
+          </button>{" "}
           instead, but make sure its in markdown format
         </p>
         <hr className="my-4" />
@@ -56,6 +68,7 @@ export default function CreateWikiPage() {
             className="my-2 block w-full rounded-md border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-neutral-700"
           />
         </form>
+        <hr className="my-4" />
         <form className="my-4 select-none text-sm">
           <div className="inline-flex">
             <input type="radio" id="public" value="Public" name="visibility" />
