@@ -28,6 +28,12 @@ Requirements:
 git checkout -b BRANCH_NAME
 ```
 
+And when you are done with your changes, push it to your forked repository and create a new PR
+
+```
+git push origin BRANCH_NAME
+```
+
 ### Setting up the project
 
 We use `npm` for the package manager for this project (for now), so make sure that it's installed and up to date
@@ -55,7 +61,18 @@ npm run dev
 ### Project Overview
 
 The project is built on top of the [T3 Stack](https://create.t3.gg/) so when contributing you should see their docs to get some sense of the project.
-- TODO: PROJECT OVERVIEW MORE STUFF
 
-- TODO: ADD MORE INSTRUCTIONS ABOUT MAKING THE PR
+More information coming soon...
 
+## Creating a new pull request
+
+All the linting and build test will be run automatically when you create a new PR, but you can run them locally with the following commands (recommended):
+
+```
+npm run lint
+npm run build
+```
+
+- Make sure that you have created a new branch for your changes
+
+If you have any questions, feel free to ask them in the [Discord Server](https://discord.gg/Cb5XdXYSJh)
