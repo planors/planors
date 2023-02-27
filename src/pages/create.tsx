@@ -19,7 +19,7 @@ export default function CreateWikiPage() {
     mutate({ title, intro, authorId: session?.user.id as string });
   };
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center text-neutral-800">
+    <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center py-10 text-neutral-800">
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
         {modalOpen && <Modal handleClose={() => setModalOpen(false)} />}
       </AnimatePresence>
@@ -67,6 +67,14 @@ export default function CreateWikiPage() {
             onChange={(e) => setIntro(e.target.value)}
             className="my-2 block w-full rounded-md border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-neutral-700"
           />
+          <div className="flex flex-row gap-2 py-2">
+            <button className="rounded-md border border-neutral-300 py-2 px-2 hover:bg-neutral-50">
+              Open editor
+            </button>
+            <button className="rounded-md border border-neutral-300 py-2 px-2 hover:bg-neutral-50">
+              Preview
+            </button>
+          </div>
         </form>
         <hr className="my-4" />
         <form className="my-4 select-none text-sm">
