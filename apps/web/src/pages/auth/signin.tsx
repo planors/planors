@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 // TODO: Fix this linting error
 // TODO: Add styles
 import type {
