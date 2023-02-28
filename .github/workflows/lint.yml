@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint
-        run: SKIP_ENV_VALIDATION=1 npm run lint
+        run: npm run lint
   build:
     runs-on: ubuntu-latest
     steps:
