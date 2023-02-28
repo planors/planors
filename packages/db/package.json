@@ -5,6 +5,7 @@
   "scripts": {
     "db:generate": "prisma generate",
     "db:push": "npm run with-env prisma db push --skip-generate",
+    "db:dev": "npm run with-env prisma studio --port 5556",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {

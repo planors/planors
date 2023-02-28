@@ -16,6 +16,9 @@
     },
     "db:push": {
       "cache": false
+    },
+    "db:dev": {
+      "cache": false
     }
   },
   "globalEnv": [
