@@ -1,15 +1,17 @@
 {
-    "name": "database",
-    "main": "./index.ts",
+  "name": "database",
+  "main": "./index.ts",
   "types": "./index.ts",
-    "scripts": {
-        "db:generate": "prisma generate",
-        "db:push": "prisma db push --skip-generate"
-      },
-    "dependencies": {
-      "@prisma/client": "latest"
-    },
-    "devDependencies": {
-      "prisma": "latest"
-    }
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "npm run with-env prisma db push --skip-generate",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@prisma/client": "latest"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.0.0",
+    "prisma": "latest"
   }
+}
