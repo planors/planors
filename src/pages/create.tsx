@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Modal from "~/components/create/Modal";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { Link } from "~/common/svg";
 
 // TODO: Use zod for validation and react form hook
 export default function CreateWikiPage() {
@@ -149,7 +150,7 @@ export default function CreateWikiPage() {
           </label>
           <div className="relative mb-2 flex items-center rounded-md border border-neutral-300">
             <div className="flex h-9 flex-col justify-center rounded-l-md border-r border-neutral-300 bg-neutral-50 px-3">
-              <LinkSVG />
+              <Link />
             </div>
             <input
               id="github"
@@ -168,7 +169,7 @@ export default function CreateWikiPage() {
           </label>
           <div className="relative mb-2 flex items-center rounded-md border border-neutral-300">
             <div className="flex h-9 flex-col justify-center rounded-l-md border-r border-neutral-300 bg-neutral-50 px-3">
-              <LinkSVG />
+              <Link />
             </div>
             <input
               id="website"
@@ -199,22 +200,3 @@ export default function CreateWikiPage() {
     </main>
   );
 }
-
-const LinkSVG = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="h-5 w-5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
-      />
-    </svg>
-  );
-};
