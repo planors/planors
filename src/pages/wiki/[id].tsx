@@ -63,6 +63,9 @@ export default function WikiPage() {
           <WikiActions />
           <span>github - {wiki.github}</span>
           <span>web - {wiki.website}</span>
+          <span>{wiki.visibility}</span>
+          <span>{wiki.draft?.toString()}</span>
+          <span>{wiki.description}</span>
         </div>
       </div>
     </main>
