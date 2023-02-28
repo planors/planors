@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "npm run with-env next build",
+    "dev": "npm run with-env next dev",
     "postinstall": "prisma generate",
-    "lint": "next lint",
-    "start": "next start"
+    "lint": "SKIP_ENV_VALIDATION=1 next lint",
+    "start": "next start",
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "database": "*",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "eslint-config-custom": "*",
+    "dotenv-cli": "^7.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/eslint": "^8.21.1",
     "@types/node": "^18.11.18",
