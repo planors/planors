@@ -4,6 +4,9 @@
     "lint": {},
     "build": {
       "outputs": [".next/**"]
+    },
+    "dev": {
+      "cache": false
     }
   },
   "globalEnv": [
