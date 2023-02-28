@@ -19,6 +19,11 @@
     }
   },
   "globalEnv": [
+    "PORT",
+    "SKIP_ENV_VALIDATION",
+    "VERCEL",
+    "NODE_ENV",
+    "VERCEL_URL",
     "NEXTAUTH_URL",
     "NEXTAUTH_SECRET",
     "DATABASE_URL",
