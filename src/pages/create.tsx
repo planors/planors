@@ -3,20 +3,43 @@ import { api } from "../utils/api";
 import { useSession } from "next-auth/react";
 import Modal from "~/components/create/Modal";
 import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
+// TODO: Use zod for validation and react form hook
 export default function CreateWikiPage() {
+  const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [intro, setIntro] = useState("");
+  const [description, setDescription] = useState("");
+  // false = private, true = public
+  const [visibility, setVisibility] = useState("private");
+  const [github, setGithub] = useState("");
+  const [website, setWebsite] = useState("");
+  const [draft, setDraft] = useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
 
   const { data: session } = useSession();
 
-  const { mutate } = api.wiki.create.useMutation();
+  const { mutate } = api.wiki.create.useMutation({
+    onSuccess: () => {
+      void router.push("/");
+    },
+  });
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log(title, intro);
-    mutate({ title, intro, authorId: session?.user.id as string });
+    mutate({
+      title,
+      intro,
+      authorId: session?.user.id as string,
+      visibility,
+      github,
+      website,
+      draft,
+      description,
+    });
   };
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center py-10 text-neutral-800">
@@ -56,6 +79,8 @@ export default function CreateWikiPage() {
           <input
             id="description"
             type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             className="my-2 block h-9 w-full rounded-md border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-neutral-700"
           />
           <label htmlFor="intro" className="font-medium text-neutral-600">
@@ -79,7 +104,14 @@ export default function CreateWikiPage() {
         <hr className="my-4" />
         <form className="my-4 select-none text-sm">
           <div className="inline-flex">
-            <input type="radio" id="public" value="Public" name="visibility" />
+            <input
+              type="radio"
+              id="public"
+              value="Public"
+              name="visibility"
+              checked={visibility === "public"}
+              onChange={() => setVisibility("public")}
+            />
             <div className="pl-2">
               <label htmlFor="public" className="font-medium text-neutral-700">
                 Public
@@ -95,6 +127,8 @@ export default function CreateWikiPage() {
               id="private"
               value="Private"
               name="visibility"
+              checked={visibility === "private"}
+              onChange={() => setVisibility("private")}
             />
             <div className="pl-2">
               <label htmlFor="private" className="font-medium text-neutral-700">
@@ -120,6 +154,8 @@ export default function CreateWikiPage() {
             <input
               id="github"
               type="text"
+              value={github}
+              onChange={(e) => setGithub(e.target.value)}
               className="block h-9 w-full rounded-md px-3 focus:outline-none"
             />
           </div>
@@ -137,6 +173,8 @@ export default function CreateWikiPage() {
             <input
               id="website"
               type="text"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
               className="block h-9 w-full rounded-md px-3 focus:outline-none"
             />
           </div>
@@ -154,7 +192,7 @@ export default function CreateWikiPage() {
             type="button"
             className="rounded-md border border-neutral-300 py-2 px-3 transition-all duration-100 ease-in-out hover:bg-neutral-100"
           >
-            Create as draft
+            Create as draft (coming soon)
           </button>
         </section>
       </div>
