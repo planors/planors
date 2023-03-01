@@ -30,10 +30,10 @@ git checkout -b BRANCH_NAME
 
 ### Setting up the project
 
-We use `npm` for the package manager for this project (for now), so make sure that it's installed and up to date
+We use `pnpm` for the package manager for this project, so make sure that it's installed and up to date
 
 ```
-npm install
+pnpm install
 ```
 
 To run the project you need to do the following steps:
@@ -48,14 +48,12 @@ The OAuth step will likely become optional step later, but now in order to run t
 After you have done that run the app with the following commands
 
 ```
-npx prisma db push &&
-npm run dev
+pnpm db:push # This will create the database tables
+pnpm db:generate # This will generate the prisma client (for typescript)
+pnpm dev # This will start the app
+```
 ```
 
 ### Project Overview
 
-The project is built on top of the [T3 Stack](https://create.t3.gg/) so when contributing you should see their docs to get some sense of the project.
-- TODO: PROJECT OVERVIEW MORE STUFF
-
-- TODO: ADD MORE INSTRUCTIONS ABOUT MAKING THE PR
-
+INFO ABOUT PACKAGES, APPS AND STRUCTURE
