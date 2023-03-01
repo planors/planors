@@ -1,9 +1,10 @@
-import { useRouter } from "next/router";
-import { api } from "../../utils/api";
-import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { Inter } from "@next/font/google";
+import ReactMarkdown from "react-markdown";
+
+import { api } from "../../utils/api";
 
 const inter = Inter({
   preload: false,

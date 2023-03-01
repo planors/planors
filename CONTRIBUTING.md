@@ -52,8 +52,10 @@ pnpm db:push # This will create the database tables
 pnpm db:generate # This will generate the prisma client (for typescript)
 pnpm dev # This will start the app
 ```
+
 ```
 
 ### Project Overview
 
 INFO ABOUT PACKAGES, APPS AND STRUCTURE
+```
