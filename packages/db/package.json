@@ -4,15 +4,17 @@
   "types": "./index.ts",
   "scripts": {
     "db:generate": "prisma generate",
-    "db:push": "npm run with-env prisma db push --skip-generate",
-    "db:dev": "npm run with-env prisma studio --port 5556",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:dev": "pnpm with-env prisma studio --port 5556",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@prisma/client": "latest",
+    "tsconfig": "workspace:*"
   },
   "devDependencies": {
     "dotenv-cli": "^7.0.0",
-    "prisma": "latest"
+    "prisma": "latest",
+    "@types/node": "18.14.2"
   }
 }

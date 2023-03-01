@@ -18,7 +18,7 @@
     "type-check": "turbo type-check"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "prettier": "latest",
     "turbo": "latest"
   },
