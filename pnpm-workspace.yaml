@@ -1,5 +1,6 @@
 packages:
   - apps/web
+  - packages/api
+  - packages/auth
   - packages/db
-  - packages/eslint
-  - packages/tsconfig
+  - packages/config/*
