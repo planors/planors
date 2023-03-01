@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+
+import { File, GitHub } from "~/common/svg";
 import Backdrop from "./Backdrop";
-import { GitHub, File } from "~/common/svg";
 
 type Props = {
   handleClose: () => void;

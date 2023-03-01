@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import { api } from "~/utils/api";
 
 export default function WikiDashboard() {
