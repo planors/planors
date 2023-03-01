@@ -2,10 +2,9 @@
   "name": "wiki-app",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -13,16 +12,16 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:push": "turbo run db:push",
     "db:generate": "turbo run db:generate",
-    "db:dev": "turbo run db:dev"
+    "db:dev": "turbo run db:dev",
+    "clean": "rm -rf node_modules",
+    "clean:workspaces": "turbo clean",
+    "type-check": "turbo type-check"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "latest"
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
   "dependencies": {},
-  "packageManager": "npm@8.19.3"
+  "packageManager": "pnpm@7.28.0"
 }
