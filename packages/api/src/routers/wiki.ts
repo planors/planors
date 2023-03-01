@@ -1,10 +1,6 @@
 import { z } from "zod";
 
-import {
-  createTRPCRouter,
-  publicProcedure,
-  protectedProcedure,
-} from "~/server/api/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const wikiRouter = createTRPCRouter({
   // For the dashboard
@@ -72,7 +68,7 @@ export const wikiRouter = createTRPCRouter({
         draft: z.boolean(),
         visibility: z.string(),
         description: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const { title, intro, description, draft, github, visibility, website } =

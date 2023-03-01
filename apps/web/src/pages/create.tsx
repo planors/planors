@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { api } from "../utils/api";
-import { useSession } from "next-auth/react";
-import Modal from "~/components/create/Modal";
-import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { Wiki } from "db";
+import { AnimatePresence } from "framer-motion";
+import { useSession } from "next-auth/react";
+
+import Modal from "~/components/create/Modal";
 import { Link } from "~/common/svg";
+import { api } from "../utils/api";
 
 // TODO: Use zod for validation and react form hook
 export default function CreateWikiPage() {

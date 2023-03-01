@@ -1,8 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+/** @type {import("tailwindcss").Config} */
+const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [require("@tailwindcss/typography")],
+  // @ts-ignore
+  presets: [require("tailwind-config")],
 };
+
+module.exports = config;

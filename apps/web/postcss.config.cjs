@@ -1,6 +1,2 @@
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
+// @ts-ignore
+module.exports = require("tailwind-config");
