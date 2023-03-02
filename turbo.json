@@ -19,7 +19,6 @@
       "outputs": [".next/**"]
     },
     "lint": {},
-    "lint:fix": {},
     "clean": {
       "cache": false
     },
