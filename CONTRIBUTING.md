@@ -28,12 +28,18 @@ Requirements:
 git checkout -b BRANCH_NAME
 ```
 
-### Setting up the project
-
-We use `npm` for the package manager for this project (for now), so make sure that it's installed and up to date
+And when you are done with your changes, push it to your forked repository and create a new PR
 
 ```
-npm install
+git push origin BRANCH_NAME
+```
+
+### Setting up the project
+
+We use `pnpm` for the package manager for this project, so make sure that it's installed and up to date
+
+```
+pnpm install
 ```
 
 To run the project you need to do the following steps:
@@ -48,14 +54,37 @@ The OAuth step will likely become optional step later, but now in order to run t
 After you have done that run the app with the following commands
 
 ```
-npx prisma db push &&
-npm run dev
+pnpm db:push # This will create the database tables
+pnpm db:generate # This will generate the prisma client (for typescript)
+pnpm dev # This will start the app and database management tool (prisma studio)
 ```
 
-### Project Overview
+## Creating a new pull request
 
-The project is built on top of the [T3 Stack](https://create.t3.gg/) so when contributing you should see their docs to get some sense of the project.
-- TODO: PROJECT OVERVIEW MORE STUFF
+All the linting and build test will be run automatically when you create a new PR, but you can run them locally with the following commands (recommended):
 
-- TODO: ADD MORE INSTRUCTIONS ABOUT MAKING THE PR
+```
+pnpm lint
+pnpm build
+```
 
+- Make sure that you have created a new branch for your changes
+
+If you have any questions, feel free to ask them in the [Discord Server](https://discord.gg/Cb5XdXYSJh)
+
+## Project Overview
+
+INFO ABOUT PACKAGES, APPS AND STRUCTURE
+
+### `apps/web`
+
+### `packages/api`
+
+### `packages/auth`
+
+### `packages/config/*`
+
+- Tailwind
+- Eslint
+
+### `packages/db`

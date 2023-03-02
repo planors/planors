@@ -1,0 +1,38 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  # https://github.com/t3-oss/create-t3-turbo/blob/main/.github/workflows/ci.yml (modified)
+  build-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install deps (with cache)
+        run: pnpm install
+
+      - name: Generate Prisma Client
+        run: pnpm turbo db:generate
+
+      - name: Build, lint and type-check
+        run: pnpm turbo build lint type-check
+        env:
+          SKIP_ENV_VALIDATION: true
