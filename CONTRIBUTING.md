@@ -17,7 +17,8 @@ All the pull requests should go aganist the `main` branch or a branch that you w
 Requirements:
 
 - Git
-- Node.js w/ npm
+- Node.js 
+- PNPM
 
 ### Git/Github
 
