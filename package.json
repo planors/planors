@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
-    "@manypkg/cli": "^0.20.0",
     "@types/prettier": "^2.7.2",
     "eslint": "^8.34.0",
     "eslint-config": "0.0.0",
