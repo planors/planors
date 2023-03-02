@@ -28,6 +28,12 @@ Requirements:
 git checkout -b BRANCH_NAME
 ```
 
+And when you are done with your changes, push it to your forked repository and create a new PR
+
+```
+git push origin BRANCH_NAME
+```
+
 ### Setting up the project
 
 We use `pnpm` for the package manager for this project, so make sure that it's installed and up to date
@@ -50,12 +56,35 @@ After you have done that run the app with the following commands
 ```
 pnpm db:push # This will create the database tables
 pnpm db:generate # This will generate the prisma client (for typescript)
-pnpm dev # This will start the app
+pnpm dev # This will start the app and database management tool (prisma studio)
 ```
 
+## Creating a new pull request
+
+All the linting and build test will be run automatically when you create a new PR, but you can run them locally with the following commands (recommended):
+
+```
+pnpm lint
+pnpm build
 ```
 
-### Project Overview
+- Make sure that you have created a new branch for your changes
+
+If you have any questions, feel free to ask them in the [Discord Server](https://discord.gg/Cb5XdXYSJh)
+
+## Project Overview
 
 INFO ABOUT PACKAGES, APPS AND STRUCTURE
-```
+
+### `apps/web`
+
+### `packages/api`
+
+### `packages/auth`
+
+### `packages/config/*`
+
+- Tailwind
+- Eslint
+
+### `packages/db`
