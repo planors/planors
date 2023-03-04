@@ -74,8 +74,6 @@ If you have any questions, feel free to ask them in the [Discord Server](https:/
 
 ## Project Overview
 
-INFO ABOUT PACKAGES, APPS AND STRUCTURE
-
 ### `apps/web`
 
 The main web application for the project.
