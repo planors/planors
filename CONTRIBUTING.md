@@ -17,7 +17,7 @@ All the pull requests should go aganist the `main` branch or a branch that you w
 Requirements:
 
 - Git
-- Node.js 
+- Node.js
 - PNPM
 
 ### Git/Github
@@ -45,7 +45,6 @@ pnpm install
 
 To run the project you need to do the following steps:
 
-- Create a mysql db on your local machine, or you can use serverless database options like Planetscale. After you have done that copy `.env.example` and change it's name to `.env` and update the `DATABASE_URL` accordingly.
 - Create Github OAuth application and link it's credentials to the `.env` file
   - `Homepage url` should be set to `http://localhost:3000`
   - `Authorization callback URL` should be set to `http://localhost:3000/api/auth/callback/github`
