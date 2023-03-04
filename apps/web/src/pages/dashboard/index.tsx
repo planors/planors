@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { type NextPageContext } from "next";
+import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 import { getSession, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
@@ -135,7 +135,7 @@ const NoWikisMessage = () => {
   return (
     <div className="select-none rounded-md border border-zinc-200 bg-zinc-50 p-5">
       <div className="flex w-full flex-row gap-4">
-        <Info className="h-10 w-10 text-orange-300" />
+        <Info className="h-10 w-10 text-amber-400" />
         <div className="flex flex-col">
           <h2 className="mb-1 font-semibold">No wikis found</h2>
           <p className="text-sm text-zinc-600">
@@ -167,7 +167,7 @@ const InDevelopmentMessage = () => {
   return (
     <div className="mt-4 select-none rounded-md border border-zinc-200 bg-zinc-50 p-5">
       <div className="flex w-full flex-row gap-4">
-        <Info className="h-10 w-10 text-orange-300" />
+        <Info className="h-10 w-10 text-green-400" />
         <div className="flex flex-col">
           <h2 className="mb-1 font-semibold">
             You're in the development version
