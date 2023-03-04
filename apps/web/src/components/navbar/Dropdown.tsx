@@ -66,7 +66,7 @@ export default function Dropdown({ session }: { session: Session["user"] }) {
                   active ? "bg-zinc-100" : ""
                 } group flex w-full items-center px-3 py-2 text-sm`}
               >
-                Documentation
+                Account
               </button>
             )}
           </Menu.Item>
@@ -80,6 +80,17 @@ export default function Dropdown({ session }: { session: Session["user"] }) {
                 } group flex w-full items-center px-3 py-2 text-sm`}
               >
                 Settings
+              </button>
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <button
+                className={`${
+                  active ? "bg-zinc-100" : ""
+                } group flex w-full items-center px-3 py-2 text-sm`}
+              >
+                Documentation
               </button>
             )}
           </Menu.Item>
