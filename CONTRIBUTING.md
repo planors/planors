@@ -117,14 +117,6 @@ packages/config
     └── postcss.js # PostCSS configuration for Tailwind
 ```
 
-### `packages/design`
-
-This package contains the design system for the project. It's built using Tailwind and it's used for building the UI.
-
-### `packages/web`
-
-This package contains the web application for the project. It's built using Next.js and it's used for the main app.
-
 ### `packages/db`
 
 This package contains the database management logic for the project. It's built using Prisma and it's used for database migrations, seeding, etc.
