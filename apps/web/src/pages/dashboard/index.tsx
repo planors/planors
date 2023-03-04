@@ -7,6 +7,7 @@ import { getSession, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
 import Error from "~/components/Error";
+import Navbar from "~/components/navbar/Navbar";
 import { Info } from "~/common/svg";
 
 const inter = Inter({
@@ -51,71 +52,77 @@ export default function Dashboard() {
   }
 
   return (
-    <main className="mx-auto my-12 max-w-5xl text-zinc-900" style={inter.style}>
-      {session && (
-        <section>
-          <h1 className="text-xl font-semibold">Dashboard</h1>
-          <p className="mt-2 mb-8 text-zinc-700">
-            Manage, create and edit your wiki(s) here
-          </p>
-        </section>
-      )}
-      {data && data.length === 0 && <NoWikisMessage />}
-      {isLoading && (
-        <div className="mt-5 text-zinc-800">Loading your wiki(s)...</div>
-      )}
-      {error && (
-        <div>
-          <Error error={error.message} />
-        </div>
-      )}
-      {data && data.length > 0 && (
-        <section>
-          <InDevelopmentMessage />
-          <div className="mt-4 rounded-md border border-zinc-200">
-            <div className="flex flex-row items-center justify-between border-b border-zinc-200 py-2 px-4">
-              <h2 className="text-sm font-semibold">Your wiki(s)</h2>
-              <Link
-                href="/create"
-                className="rounded-md border border-zinc-200 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out"
-              >
-                Create
-              </Link>
-            </div>
-            <div className="divide-y ">
-              {data?.map((wiki) => (
-                <div
-                  key={wiki.id}
-                  className="group flex flex-row items-center justify-between py-3 px-4 hover:bg-zinc-50"
-                >
-                  <Link href={`dashboard/${wiki.id}`} className="text-sm">
-                    <h4>{wiki.title}</h4>
-                  </Link>
-                  <div className="flex flex-row gap-2">
-                    <button
-                      key={wiki.id}
-                      className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
-                    >
-                      Manage
-                    </button>
-                    <button
-                      key={wiki.id}
-                      className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
-                      onClick={() => handleDelete(wiki.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-
-                  {mutationError && <div>error: {mutationError.message}</div>}
-                  {isMutating && <div>deleting...</div>}
-                </div>
-              ))}
-            </div>
+    <>
+      <Navbar />
+      <main
+        className="mx-auto my-12 max-w-5xl text-zinc-900"
+        style={inter.style}
+      >
+        {session && (
+          <section>
+            <h1 className="text-xl font-semibold">Dashboard</h1>
+            <p className="mt-2 mb-8 text-zinc-700">
+              Manage, create and edit your wiki(s) here
+            </p>
+          </section>
+        )}
+        {data && data.length === 0 && <NoWikisMessage />}
+        {isLoading && (
+          <div className="mt-5 text-zinc-800">Loading your wiki(s)...</div>
+        )}
+        {error && (
+          <div>
+            <Error error={error.message} />
           </div>
-        </section>
-      )}
-    </main>
+        )}
+        {data && data.length > 0 && (
+          <section>
+            <InDevelopmentMessage />
+            <div className="mt-4 rounded-md border border-zinc-200">
+              <div className="flex flex-row items-center justify-between border-b border-zinc-200 py-2 px-4">
+                <h2 className="text-sm font-semibold">Your wiki(s)</h2>
+                <Link
+                  href="/create"
+                  className="rounded-md border border-zinc-200 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out"
+                >
+                  Create
+                </Link>
+              </div>
+              <div className="divide-y ">
+                {data?.map((wiki) => (
+                  <div
+                    key={wiki.id}
+                    className="group flex flex-row items-center justify-between py-3 px-4 hover:bg-zinc-50"
+                  >
+                    <Link href={`dashboard/${wiki.id}`} className="text-sm">
+                      <h4>{wiki.title}</h4>
+                    </Link>
+                    <div className="flex flex-row gap-2">
+                      <button
+                        key={wiki.id}
+                        className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
+                      >
+                        Manage
+                      </button>
+                      <button
+                        key={wiki.id}
+                        className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
+                        onClick={() => handleDelete(wiki.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+
+                    {mutationError && <Error error={mutationError.message} />}
+                    {isMutating && <div>deleting...</div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
+    </>
   );
 }
 
@@ -180,7 +187,9 @@ export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
   if (!session?.user?.id) {
     return { redirect: { permanent: false, destination: "/auth/signin" } };
-  } else {
-    return { redirect: { permanent: false, destination: "/dashboard" } };
   }
+
+  return {
+    props: {},
+  };
 }
