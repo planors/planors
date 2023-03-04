@@ -115,7 +115,7 @@ export default function Dropdown({ session }: { session: Session["user"] }) {
                 } group flex w-full items-center px-3 py-2 text-sm`}
                 onClick={(e) => {
                   e.preventDefault();
-                  void signOut({ redirect: false });
+                  void signOut();
                 }}
               >
                 Sign out
