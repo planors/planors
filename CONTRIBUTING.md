@@ -78,13 +78,53 @@ INFO ABOUT PACKAGES, APPS AND STRUCTURE
 
 ### `apps/web`
 
+The main web application for the project.
+
+### `apps/docs` (Coming soon)
+
+This is the documentation site for the project. It's built using Astro and Tailwind. This is the place where you can find all the information about the project, how to use it, how to contribute and so on. [Pull request for the docs](https://github.com/LukaHietala/wiki-app/pull/47)
+
 ### `packages/api`
+
+This package contains the API for the project and it's built using tRPC. The API is used for authentication, database management, etc.
+
+#### Routes
+
+Routes are located in the `packages/api/src/routes` folder. Each route is a file that exports procedures that are used for mutations and queries. There are two types of procedures: `publicProcedure` and `protectedProcedure`. The `publicProcedure` is used for procedures that don't require authentication and the `protectedProcedure` is used for procedures that require authentication.
+
+All the routes are put together in the `packages/api/src/root.ts` file to the `appRouter` and then the `appRouter` is exported to the `packages/api/src/index.ts` file.
+
+- [tRPC](https://trpc.io/)
+- [tRPC Next.js](https://trpc.io/docs/nextjs)
+- [tRPC docs](https://trpc.io/docs)
 
 ### `packages/auth`
 
+This package contains the authentication logic for the project. It's built using NextAuth.js and it's used for Github authentication.
+
 ### `packages/config/*`
 
-- Tailwind
-- Eslint
+Contains the global configuration for the project such as the design system with Tailwind and eslint configuration.
+
+#### Structure
+
+```
+packages/config
+├── eslint
+│   ├── index.js # Eslint configuration
+└── tailwind
+    ├── index.js # Tailwind configuration with the design system (colors, etc.)
+    └── postcss.js # PostCSS configuration for Tailwind
+```
+
+### `packages/design`
+
+This package contains the design system for the project. It's built using Tailwind and it's used for building the UI.
+
+### `packages/web`
+
+This package contains the web application for the project. It's built using Next.js and it's used for the main app.
 
 ### `packages/db`
+
+This package contains the database management logic for the project. It's built using Prisma and it's used for database migrations, seeding, etc.
