@@ -1,5 +1,6 @@
 import { Menu } from "@headlessui/react";
 import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 
 export default function Dropdown({ session }: { session: Session["user"] }) {
   return (
@@ -101,6 +102,10 @@ export default function Dropdown({ session }: { session: Session["user"] }) {
                 className={`${
                   active ? "bg-zinc-100" : ""
                 } group flex w-full items-center px-3 py-2 text-sm`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  void signOut({ redirect: false });
+                }}
               >
                 Sign out
               </button>
