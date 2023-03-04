@@ -2,7 +2,7 @@ import { useState } from "react";
 import { type NextPageContext } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import { getSession, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
