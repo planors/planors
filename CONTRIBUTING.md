@@ -118,3 +118,5 @@ packages/config
 ### `packages/db`
 
 This package contains the database management logic for the project. It's built using Prisma and it's used for database migrations, seeding, etc.
+
+> Feel free to improve this guide if you find something that is missing or could be improved
