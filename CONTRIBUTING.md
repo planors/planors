@@ -100,7 +100,7 @@ All the routes are put together in the `packages/api/src/root.ts` file to the `a
 
 ### `packages/auth`
 
-This package contains the authentication logic for the project. It's built using NextAuth.js and it's used for Github authentication.
+This package contains the authentication logic for the project. It's built using NextAuth.js and it's used for Github OAuth authentication.
 
 ### `packages/config/*`
 
