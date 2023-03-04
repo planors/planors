@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "@headlessui/react";
-import { Inter } from "next/font/google";
 import { useSession } from "next-auth/react";
 
 import Dropdown from "./Dropdown";
@@ -18,7 +18,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="top-0 w-full border-b border-zinc-200" style={inter.style}>
-      <div className="mx-auto flex max-w-5xl flex-row items-center justify-between py-3">
+      <div className="mx-auto flex max-w-5xl flex-row items-center justify-between py-3 px-4 lg:px-0">
         <div className="flex flex-row items-center gap-4">
           <Link href="/" className="text-zinc-900">
             Home

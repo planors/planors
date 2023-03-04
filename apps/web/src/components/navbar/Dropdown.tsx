@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 
 export default function Dropdown({ session }: { session: Session["user"] }) {
   return (
-    <div className="fixed top-16 w-40 text-right">
+    <div className="fixed top-14 right-2 w-40 text-right md:right-3 lg:right-auto">
       <Menu.Items className="absolute mt-2 w-40 origin-top divide-y divide-zinc-200 rounded-md bg-white shadow-sm ring-1 ring-zinc-200 focus:outline-none">
         <div className="py-1 text-left">
           <Menu.Item>

@@ -55,7 +55,7 @@ export default function Dashboard() {
     <>
       <Navbar />
       <main
-        className="mx-auto my-12 max-w-5xl text-zinc-900"
+        className="mx-auto my-12 max-w-5xl px-4 text-zinc-900 lg:px-0"
         style={inter.style}
       >
         {session && (
@@ -166,7 +166,7 @@ const NoWikisMessage = () => {
 const InDevelopmentMessage = () => {
   return (
     <div className="mt-4 select-none rounded-md border border-zinc-200 bg-zinc-50 p-5">
-      <div className="flex w-full flex-row gap-4">
+      <div className="flex w-full flex-col gap-4 lg:flex-row">
         <Info className="h-10 w-10 text-green-400" />
         <div className="flex flex-col">
           <h2 className="mb-1 font-semibold">
