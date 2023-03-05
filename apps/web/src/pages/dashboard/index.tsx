@@ -7,6 +7,8 @@ import { getSession, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
 import Error from "~/components/Error";
+import CustomAlert from "~/components/alert/CustomAlert";
+import InDevelopmentMessage from "~/components/alert/InDevelopmentMessage";
 import Navbar from "~/components/navbar/Navbar";
 import { Info } from "~/common/svg";
 
@@ -66,7 +68,28 @@ export default function Dashboard() {
             </p>
           </section>
         )}
-        {data && data.length === 0 && <NoWikisMessage />}
+        {data && data.length === 0 && (
+          <CustomAlert
+            title="No wikis found"
+            iconColor="amber"
+            description="You don't seem to have any wiki(s) yet. You can create one by
+            clicking the button below. If you already have a wiki, you can go to
+            the import page to import it (coming soon)"
+          >
+            <Link
+              href="/create"
+              className="rounded-md border border-zinc-300 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out"
+            >
+              Create
+            </Link>
+            <button
+              className="rounded-md border border-zinc-300 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out "
+              type="button"
+            >
+              Dismiss
+            </button>
+          </CustomAlert>
+        )}
         {isLoading && (
           <div className="mt-5 text-zinc-800">Loading your wiki(s)...</div>
         )}
@@ -130,58 +153,6 @@ export default function Dashboard() {
 // TODO - Ability to edit/delete/create the wiki
 // TODO - Stats about the wiki
 // TODO - Link to wiki's dashboard (when ready)
-
-const NoWikisMessage = () => {
-  return (
-    <div className="select-none rounded-md border border-zinc-200 bg-zinc-50 p-5">
-      <div className="flex w-full flex-row gap-4">
-        <Info className="h-10 w-10 text-amber-400" />
-        <div className="flex flex-col">
-          <h2 className="mb-1 font-semibold">No wikis found</h2>
-          <p className="text-sm text-zinc-600">
-            You don't seem to have any wiki(s) yet. You can create one by
-            clicking the button below. If you already have a wiki, you can go to
-            the import page to import it (coming soon)
-          </p>
-          <div className="mt-5 flex flex-row gap-2">
-            <Link
-              href="/create"
-              className="rounded-md border border-zinc-300 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out"
-            >
-              Create
-            </Link>
-            <button
-              className="rounded-md border border-zinc-300 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out "
-              type="button"
-            >
-              Dismiss
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const InDevelopmentMessage = () => {
-  return (
-    <div className="mt-4 select-none rounded-md border border-zinc-200 bg-zinc-50 p-5">
-      <div className="flex w-full flex-col gap-4 lg:flex-row">
-        <Info className="h-10 w-10 text-green-400" />
-        <div className="flex flex-col">
-          <h2 className="mb-1 font-semibold">
-            You're in the development version
-          </h2>
-          <p className="text-sm text-zinc-600">
-            This is a development version of the app, so some features may not
-            work as expected. If you find any bugs, please report them on the
-            GitHub issues of the project.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
