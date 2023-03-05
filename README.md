@@ -76,9 +76,9 @@ Found a bug? Create an detailed issue and we'll try to fix it as soon as possibl
 8. Run `pnpm db:generate` to generate the Prisma client (you need to run this after every schema change)
 9. Run `pnpm dev` to start the development server
 
-When you start the development server, you can access the app at `http://localhost:3000` and the Prisma Studio at `http://localhost:5555`. Prisma Studio is a GUI for the database, so you can use it to check the database and make changes to it. Note that `pnpm build` also lints the code, so you don't need to run `pnpm lint` separately.
+When you start the development server, you can access the app at `http://localhost:3000` and the Prisma Studio at `http://localhost:5556`. Prisma Studio is a GUI for the database, so you can use it to check the database and make changes to it. 
 
-After you are done with the development, you can run `pnpm build` to build the app and `pnpm start` to start the production server 
+After you are done with the development, you can run `pnpm build` to build the app and `pnpm start` to start the production server, and tote that `pnpm build` also lints the code, so you don't need to run `pnpm lint` separately.
 
 Encountered any problems? Create an issue and we'll try to help you out
 
