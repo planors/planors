@@ -11,7 +11,7 @@ This project is a monorepo powered by [Turborepo](https://turbo.build/repo) and 
 
 There are alsome other packages in the `packages` folder, and you can read more about them in the [contributing guidelines](CONTRIBUTING.md) :)
 
-### Features (planned)
+### Planned features
 
 - Create customizable and interactive wikis for users (not just borning text)
 - Diagrams (w/ Excalidraw)
