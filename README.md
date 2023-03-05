@@ -26,6 +26,10 @@ There are alsome other packages in the `packages` folder, and you can read more 
 
 ### Planned features
 
+Important note: This project is in the very very early stages of development, so the direction of the project might change, and some of the planned features might not be implemented or might be implemented in a different way. 
+
+Also, the features listed here are not in any particular order.
+
 - Create customizable and interactive wikis for users (not just borning text)
 - Diagrams (w/ Excalidraw)
 - Revisions
@@ -38,6 +42,7 @@ There are alsome other packages in the `packages` folder, and you can read more 
 - Store to GitHub repository or the database
 - [Others planned features](https://github.com/users/LukaHietala/projects/9?query=is%3Aopen+sort%3Aupdated-desc)
 
+Do you have any ideas for features? You can create an issue or join to the [Discord](https://discord.gg/Cb5XdXYSJh) server and discuss about it there 😉
 
 ### Getting started
 
@@ -53,16 +58,16 @@ A guide for getting started with the project and contributing.
 
 #### Local development
 
-1. Clone the repository
+1. Clone the repository and `cd` into it
 2. Install [pnpm](https://pnpm.io/)
 3. Run `pnpm install` in the root of the project
 4. Copy `.env.example` to `.env` and fill in the values, more info in the [contributing guidelines](CONTRIBUTING.md)
 6. Run `pnpm db:push` to push schema changes to the database
 7. Run `pnpm db:seed` to seed the database with some dummy data (coming)
 8. Run `pnpm db:generate` to generate the Prisma client (you need to run this after every schema change)
-5. Run `pnpm dev` to start the development server
+9. Run `pnpm dev` to start the development server
 
-#### Selfhosting
+#### Selfhosting (WIP)
 
 The selfhosting possibilities are not yet implemented
 
