@@ -10,7 +10,7 @@
     <img alt="Link to Discord" src="https://img.shields.io/discord/1079022930039689246?color=738ad6&label=Chat%20on%20Discord&logo=discord&logoColor=ffffff&widge=false"/>
   </a>
 </p>
-<br />
+<hr />
 
 **Work in progress** 🚧
 
