@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { type NextPageContext } from "next";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { getSession, useSession } from "next-auth/react";
 
@@ -10,7 +8,6 @@ import Error from "~/components/Error";
 import CustomAlert from "~/components/alert/CustomAlert";
 import InDevelopmentMessage from "~/components/alert/InDevelopmentMessage";
 import Navbar from "~/components/navbar/Navbar";
-import { Info } from "~/common/svg";
 
 const inter = Inter({
   preload: false,

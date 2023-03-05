@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { Session } from "next-auth";
+import { type Session } from "next-auth";
 import { signOut } from "next-auth/react";
 
 export default function Dropdown({ session }: { session: Session["user"] }) {
@@ -8,7 +8,7 @@ export default function Dropdown({ session }: { session: Session["user"] }) {
       <Menu.Items className="absolute mt-2 w-40 origin-top divide-y divide-zinc-200 rounded-md bg-white shadow-sm ring-1 ring-zinc-200 focus:outline-none">
         <div className="py-1 text-left">
           <Menu.Item>
-            {({ active }) => (
+            {() => (
               <div
                 className="px-3 py-2 text-sm"
                 onClick={(e) => {

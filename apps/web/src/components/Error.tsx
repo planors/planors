@@ -27,7 +27,7 @@ const Error = ({ error }: { error: string }) => {
                 className="rounded-md border border-zinc-300 bg-white py-2 px-3 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out"
                 type="button"
                 onClick={() => {
-                  navigator.clipboard.writeText(error);
+                  void navigator.clipboard.writeText(error);
                   setCopied(true);
                 }}
               >

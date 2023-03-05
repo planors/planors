@@ -7,7 +7,7 @@ const InDevelopmentMessage = () => {
         <Info className="h-10 w-10 text-green-400" />
         <div className="flex flex-col">
           <h2 className="mb-1 font-semibold">
-            You're in the development version
+            You&apos;re in the development version
           </h2>
           <p className="text-sm text-zinc-600">
             This is a development version of the app, so some features may not
