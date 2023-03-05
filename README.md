@@ -1,4 +1,4 @@
-## Wiki app ([unnamed](https://github.com/LukaHietala/wiki-app/issues/14))
+# Wiki app ([unnamed](https://github.com/LukaHietala/wiki-app/issues/14))
 <p>
   <a href="https://github.com/LukaHietala/wiki-app/blob/main/LICENSE">
     <img alt="This app is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  />
@@ -31,7 +31,7 @@ Awesome open-source technologies that are used in this project
 - [Prisma](https://www.prisma.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-### Planned features
+## Planned features
 
 Important note: This project is in the very very early stages of development, so the direction of the project might change, and some of the planned features might not be implemented or might be implemented in a different way. 
 
@@ -51,13 +51,13 @@ Also, the features listed here are not in any particular order.
 
 Do you have any ideas for features? You can create an issue or join to the [Discord](https://discord.gg/Cb5XdXYSJh) server and discuss about it there 😉
 
-### Getting started
+## Getting started
 
 A guide for getting started with the project and contributing. If you want more detailed info about contributing, you can check the [contributing guidelines](CONTRIBUTING.md)
 
 Found a bug? Create an detailed issue and we'll try to fix it as soon as possible, or if you want, you can fix it yourself and create a Pull Request
 
-#### Environment variables
+### Environment variables
 
 - `DATABASE_URL` - The URL to the database
 - `NEXTAUTH_URL` - The URL to the app (used by NextAuth.js)
@@ -65,7 +65,7 @@ Found a bug? Create an detailed issue and we'll try to fix it as soon as possibl
 - `GITHUB_CLIENT_SECRET` - The GitHub OAuth app client secret
 - `NEXTAUTH_SECRET` - The secret used by NextAuth.js. Create a random string by using the `openssl rand -base64 32` command on linux/macOS
 
-#### Local development
+### Local development
 
 1. Clone the repository and `cd` into it
 2. Install [pnpm](https://pnpm.io/)
@@ -82,15 +82,15 @@ After you are done with the development, you can run `pnpm build` to build the a
 
 Encountered any problems? Create an issue and we'll try to help you out
 
-#### Selfhosting (WIP)
+### Selfhosting (WIP)
 
 The selfhosting possibilities are not yet implemented. 
 
-### Obtaining secrets
+## Obtaining secrets
 
 Guide for obtaining the secrets needed for the app to work properly.
 
-#### GitHub OAuth app
+### GitHub OAuth app
 
 Note: Github Oauth app can only take one redirect- and home URL, so you can't use the same app for both the production and development environments. You need to create a new app for each environment. 
 
@@ -102,6 +102,6 @@ Note: Github Oauth app can only take one redirect- and home URL, so you can't us
 6. Set the `NEXTAUTH_URL` environment variable to the URL of the app (e.g. `http://localhost:3000`)
 
 
-### License
+## License
 
 > This app is licensed under the [MIT license](https://github.com/LukaHietala/create-wiki/blob/main/LICENSE)
