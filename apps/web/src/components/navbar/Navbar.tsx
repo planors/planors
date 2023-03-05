@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +14,6 @@ const inter = Inter({
 export default function Navbar() {
   const { data: session } = useSession();
 
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="top-0 w-full border-b border-zinc-200" style={inter.style}>
       <div className="mx-auto flex max-w-5xl flex-row items-center justify-between py-3 px-4 lg:px-0">
