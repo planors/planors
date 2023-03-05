@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import ReactMarkdown from "react-markdown";
 
 import { api } from "../../utils/api";
