@@ -1,6 +1,17 @@
-**WIP** 🚧
+## Wiki app (unnamed)
 
-Brief explanation: This is an app for creating interactive wikis for projects or any other things. This project is in the very early stages of development, so there are not many features yet. The `projects` tab on GitHub lists all the planned features. Some of the planned features:
+**Work in progress**
+
+Open-source app for managing projects and their wikis, roadmaps, todos, etc. This project is in the very early stages of development, so there are not many features yet. The `projects` tab on GitHub lists all the planned features. If you want to contribute, you can check the [contributing guidelines](CONTRIBUTING.md)
+
+This project is a monorepo powered by [Turborepo](https://turbo.build/repo) and `pnpm`.
+
+- `apps/web` - Contains the main web application (Next.js)
+- `apps/docs` - Documentation for this project built with Astro ([WIP](https://github.com/LukaHietala/wiki-app/pull/47))
+
+There are alsome other packages in the `packages` folder, and you can read more about them in the [contributing guidelines](CONTRIBUTING.md) :)
+
+### Features (planned)
 
 - Create customizable and interactive wikis for users (not just borning text)
 - Diagrams (w/ Excalidraw)
@@ -14,9 +25,35 @@ Brief explanation: This is an app for creating interactive wikis for projects or
 - Store to GitHub repository or the database
 - [Others planned features](https://github.com/users/LukaHietala/projects/9?query=is%3Aopen+sort%3Aupdated-desc)
 
-Contributing guidelines [here](https://github.com/LukaHietala/create-wiki/blob/main/CONTRIBUTING.md) (a good way to help the project is by fixing small things marked as `TODO` or `FIXME`)
 
-#### Acknowledgements
+### Getting started
+
+A guide for getting started with the project and contributing. 
+
+#### Environment variables
+
+- `DATABASE_URL` - The URL to the database
+- `NEXTAUTH_URL` - The URL to the app (used by NextAuth.js)
+- `GITHUB_CLIENT_ID` - The GitHub OAuth app client ID
+- `GITHUB_CLIENT_SECRET` - The GitHub OAuth app client secret
+- `NEXTAUTH_SECRET` - The secret used by NextAuth.js
+
+#### Local development
+
+1. Clone the repository
+2. Install [pnpm](https://pnpm.io/)
+3. Run `pnpm install` in the root of the project
+4. Copy `.env.example` to `.env` and fill in the values, more info in the [contributing guidelines](CONTRIBUTING.md)
+6. Run `pnpm db:push` to push schema changes to the database
+7. Run `pnpm db:seed` to seed the database with some dummy data (coming)
+8. Run `pnpm db:generate` to generate the Prisma client (you need to run this after every schema change)
+5. Run `pnpm dev` to start the development server
+
+#### Selfhosting
+
+The selfhosting possibilities are not yet implemented
+
+### Acknowledgements
 
 Awesome open-source technologies that are used in this project
 
