@@ -100,13 +100,13 @@ export default function Dashboard() {
                     <div className="flex flex-row gap-2">
                       <button
                         key={wiki.id}
-                        className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
+                        className="scale-0 rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-colors duration-100 ease-in-out group-hover:scale-100"
                       >
                         Manage
                       </button>
                       <button
                         key={wiki.id}
-                        className="invisible rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-all duration-100 ease-in-out group-hover:visible"
+                        className="scale-0 rounded-md border border-zinc-200 bg-white py-2 px-2 text-sm font-medium text-zinc-800 transition-colors duration-100 ease-in-out group-hover:scale-100"
                         onClick={() => handleDelete(wiki.id)}
                       >
                         Delete
