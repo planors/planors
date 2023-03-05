@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Wiki } from "db";
 import { AnimatePresence } from "framer-motion";
 import { useSession } from "next-auth/react";
 
@@ -19,7 +18,7 @@ export default function CreateWikiPage() {
   const [visibility, setVisibility] = useState("private");
   const [github, setGithub] = useState("");
   const [website, setWebsite] = useState("");
-  const [draft, setDraft] = useState(false);
+  const [draft, /*setDraft*/] = useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
 
