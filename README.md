@@ -10,7 +10,7 @@
     <img alt="Link to Discord" src="https://img.shields.io/discord/1079022930039689246?color=738ad6&label=Chat%20on%20Discord&logo=discord&logoColor=ffffff&widge=false"/>
   </a>
 </p>
-<hr />
+<br />
 
 **Work in progress** 🚧
 
@@ -22,6 +22,14 @@ This project is a monorepo powered by [Turborepo](https://turbo.build/repo) and 
 - `apps/docs` - Documentation for this project built with Astro ([WIP](https://github.com/LukaHietala/wiki-app/pull/47))
 
 There are alsome other packages in the `packages` folder, and you can read more about them in the [contributing guidelines](CONTRIBUTING.md) :)
+
+Awesome open-source technologies that are used in this project
+
+- [tRPC](https://trpc.io/)
+- [Next.js](https://nextjs.org/)
+- [Next-auth.js (Now known as Auth.js)](https://next-auth.js.org/)
+- [Prisma](https://www.prisma.io/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ### Planned features
 
@@ -55,7 +63,7 @@ Found a bug? Create an detailed issue and we'll try to fix it as soon as possibl
 - `NEXTAUTH_URL` - The URL to the app (used by NextAuth.js)
 - `GITHUB_CLIENT_ID` - The GitHub OAuth app client ID
 - `GITHUB_CLIENT_SECRET` - The GitHub OAuth app client secret
-- `NEXTAUTH_SECRET` - The secret used by NextAuth.js
+- `NEXTAUTH_SECRET` - The secret used by NextAuth.js. Create a random string by using the `openssl rand -base64 32` command on linux/macOS
 
 #### Local development
 
@@ -76,18 +84,24 @@ Encountered any problems? Create an issue and we'll try to help you out
 
 #### Selfhosting (WIP)
 
-The selfhosting possibilities are not yet implemented
+The selfhosting possibilities are not yet implemented. 
 
-### Acknowledgements
+### Obtaining secrets
 
-Awesome open-source technologies that are used in this project
+Guide for obtaining the secrets needed for the app to work properly.
 
-- [tRPC](https://trpc.io/)
-- [Next.js](https://nextjs.org/)
-- [Next-auth.js (Now known as Auth.js)](https://next-auth.js.org/)
-- [Prisma](https://www.prisma.io/)
-- [Tailwind CSS](https://tailwindcss.com/)
+#### GitHub OAuth app
 
-If you want to contribute and discuss about different stuff, you can join to the [Discord](https://discord.gg/Cb5XdXYSJh) server of this project
+Note: Github Oauth app can only take one redirect- and home URL, so you can't use the same app for both the production and development environments. You need to create a new app for each environment. 
+
+1. Open [GitHub](https://github.com) and open the developer settings and create a new OAuth app
+2. Set the homepage URL to the URL of the app (e.g. `http://localhost:3000`)
+3. Set the redirect URL to the URL of the app (e.g. `http://localhost:3000/api/auth/callback/github`)
+4. Copy the client ID and client secret for the next step
+5. Set the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` environment variables to the client ID and client secret respectively in the `.env` file
+6. Set the `NEXTAUTH_URL` environment variable to the URL of the app (e.g. `http://localhost:3000`)
+
+
+### License
 
 > This app is licensed under the [MIT license](https://github.com/LukaHietala/create-wiki/blob/main/LICENSE)
