@@ -1,4 +1,17 @@
 ## Wiki app (unnamed)
+<br />
+<p>
+  <a href="https://github.com/LukaHietala/wiki-app/blob/main/LICENSE">
+    <img alt="This app is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  />
+  </a>
+  <a href="https://github.com/LukaHietala/wiki-app/blob/main/CONTRIBUTING.md">
+    <img alt="PRs welcome!" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat"  />
+  </a>
+  <a href="https://discord.gg/Cb5XdXYSJh">
+    <img alt="Link to Discord" src="https://img.shields.io/discord/1079022930039689246?color=738ad6&label=Chat%20on%20Discord&logo=discord&logoColor=ffffff&widge=false"/>
+  </a>
+</p>
+<br />
 
 **Work in progress**
 
