@@ -12,7 +12,7 @@
 </p>
 <hr />
 
-**Work in progress**
+**Work in progress** 🚧
 
 Open-source app for managing projects and their wikis, roadmaps, todos, etc. This project is in the very early stages of development, so there are not many features yet. The `projects` tab on GitHub lists all the planned features. If you want to contribute, you can check the [contributing guidelines](CONTRIBUTING.md)
 
