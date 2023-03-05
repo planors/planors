@@ -8,7 +8,7 @@ Every contribution will help the project, even if it's just a small wording fix 
 
 ## Issues
 
-If you have found a bug or would like to propose a new feature, [Github Issues]() are the good place to make it public. This project does not have a "Issue template", but be sure to provide as much information as possible. Screenshots, video, errors, code. etc.
+If you have found a bug or would like to propose a new feature, [Github Issues](https://github.com/LukaHietala/wiki-app/issues) are the good place to make it public. This project has a issue template to make sure that the issues are detailed enough.
 
 ## Development workflow
 
