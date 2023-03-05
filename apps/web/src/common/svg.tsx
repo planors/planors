@@ -2,13 +2,15 @@
 
 type Props = {
   className?: string;
+  style?: React.CSSProperties;
 };
 
-export const GitHub = ({ className }: Props) => {
+export const GitHub = ({ className, style }: Props) => {
   return (
     <svg
       viewBox="0 -3.5 256 256"
       className={className || "h-6 w-6"}
+      style={style}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMinYMin meet"
       fill="#000000"
@@ -31,13 +33,14 @@ export const GitHub = ({ className }: Props) => {
   );
 };
 
-export const File = ({ className }: Props) => {
+export const File = ({ className, style }: Props) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className || "h-6 w-6"}
+      style={style}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
@@ -56,7 +59,7 @@ export const File = ({ className }: Props) => {
   );
 };
 
-export const Link = ({ className }: Props) => {
+export const Link = ({ className, style }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +68,7 @@ export const Link = ({ className }: Props) => {
       strokeWidth={1.5}
       stroke="currentColor"
       className={className || "h-5 w-5"}
+      style={style}
     >
       <path
         strokeLinecap="round"
@@ -75,7 +79,7 @@ export const Link = ({ className }: Props) => {
   );
 };
 
-export const Info = ({ className }: Props) => {
+export const Info = ({ className, style }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -84,6 +88,7 @@ export const Info = ({ className }: Props) => {
       strokeWidth={1.5}
       stroke="currentColor"
       className={className || "h-5 w-5"}
+      style={style}
     >
       <path
         strokeLinecap="round"

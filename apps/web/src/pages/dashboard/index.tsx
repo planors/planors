@@ -68,7 +68,7 @@ export default function Dashboard() {
         {data && data.length === 0 && (
           <CustomAlert
             title="No wikis found"
-            iconColor="amber"
+            iconColor="#fbbf24"
             description="You don't seem to have any wiki(s) yet. You can create one by
             clicking the button below. If you already have a wiki, you can go to
             the import page to import it (coming soon)"
