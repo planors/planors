@@ -1,4 +1,4 @@
-# Wiki app ([unnamed](https://github.com/LukaHietala/wiki-app/issues/14))
+# Planors ([name suggestions still available](https://github.com/LukaHietala/wiki-app/issues/14))
 <p>
   <a href="https://github.com/LukaHietala/wiki-app/blob/main/LICENSE">
     <img alt="This app is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  />
