@@ -8,7 +8,7 @@ Every contribution will help the project, even if it's just a small wording fix 
 
 ## Issues
 
-If you have found a bug or would like to propose a new feature, [Github Issues]() are the good place to make it public. This project does not have a "Issue template", but be sure to provide as much information as possible. Screenshots, video, errors, code. etc.
+If you have found a bug or would like to propose a new feature, [Github Issues](https://github.com/LukaHietala/wiki-app/issues) are the good place to make it public. This project has a issue template to make sure that the issues are detailed enough.
 
 ## Development workflow
 
@@ -17,7 +17,7 @@ All the pull requests should go aganist the `main` branch or a branch that you w
 Requirements:
 
 - Git
-- Node.js 
+- Node.js
 - PNPM
 
 ### Git/Github
@@ -45,7 +45,6 @@ pnpm install
 
 To run the project you need to do the following steps:
 
-- Create a mysql db on your local machine, or you can use serverless database options like Planetscale. After you have done that copy `.env.example` and change it's name to `.env` and update the `DATABASE_URL` accordingly.
 - Create Github OAuth application and link it's credentials to the `.env` file
   - `Homepage url` should be set to `http://localhost:3000`
   - `Authorization callback URL` should be set to `http://localhost:3000/api/auth/callback/github`
@@ -75,17 +74,49 @@ If you have any questions, feel free to ask them in the [Discord Server](https:/
 
 ## Project Overview
 
-INFO ABOUT PACKAGES, APPS AND STRUCTURE
-
 ### `apps/web`
+
+The main web application for the project.
+
+### `apps/docs` (Coming soon)
+
+This is the documentation site for the project. It's built using Astro and Tailwind. This is the place where you can find all the information about the project, how to use it, how to contribute and so on. [Pull request for the docs](https://github.com/LukaHietala/wiki-app/pull/47)
 
 ### `packages/api`
 
+This package contains the API for the project and it's built using tRPC. The API is used for authentication, database management, etc.
+
+#### Routes
+
+Routes are located in the `packages/api/src/routes` folder. Each route is a file that exports procedures that are used for mutations and queries. There are two types of procedures: `publicProcedure` and `protectedProcedure`. The `publicProcedure` is used for procedures that don't require authentication and the `protectedProcedure` is used for procedures that require authentication.
+
+All the routes are put together in the `packages/api/src/root.ts` file to the `appRouter` and then the `appRouter` is exported to the `packages/api/src/index.ts` file.
+
+- [tRPC](https://trpc.io/)
+- [tRPC Next.js](https://trpc.io/docs/nextjs)
+- [tRPC docs](https://trpc.io/docs)
+
 ### `packages/auth`
+
+This package contains the authentication logic for the project. It's built using NextAuth.js and it's used for Github OAuth authentication.
 
 ### `packages/config/*`
 
-- Tailwind
-- Eslint
+Contains the global configuration for the project such as the design system with Tailwind and eslint configuration.
+
+#### Structure
+
+```
+packages/config
+├── eslint
+│   ├── index.js # Eslint configuration
+└── tailwind
+    ├── index.js # Tailwind configuration with the design system (colors, etc.)
+    └── postcss.js # PostCSS configuration for Tailwind
+```
 
 ### `packages/db`
+
+This package contains the database management logic for the project. It's built using Prisma and it's used for database migrations, seeding, etc.
+
+> Feel free to improve this guide if you find something that is missing or could be improved

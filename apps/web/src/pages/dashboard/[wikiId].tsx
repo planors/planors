@@ -32,7 +32,7 @@ export default function WikiDashboard() {
   }
 
   return (
-    <main>
+    <main className="">
       <Link href={`/wiki/${wikiId as string}`}>View</Link>
       <h1>{data?.title}</h1> <button onClick={handleDelete}>Delete</button>
       <Link href={"/dashboard"}>Back to dashboard</Link>

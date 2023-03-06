@@ -1,10 +1,16 @@
 // Source for most of this file: heroicons.com
 
-export const GitHub = () => {
+type Props = {
+  className?: string;
+  style?: React.CSSProperties;
+};
+
+export const GitHub = ({ className, style }: Props) => {
   return (
     <svg
       viewBox="0 -3.5 256 256"
-      className="h-6 w-6"
+      className={className || "h-6 w-6"}
+      style={style}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMinYMin meet"
       fill="#000000"
@@ -27,13 +33,14 @@ export const GitHub = () => {
   );
 };
 
-export const File = () => {
+export const File = ({ className, style }: Props) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6"
+      className={className || "h-6 w-6"}
+      style={style}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
@@ -52,7 +59,7 @@ export const File = () => {
   );
 };
 
-export const Link = () => {
+export const Link = ({ className, style }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -60,12 +67,33 @@ export const Link = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-5 w-5"
+      className={className || "h-5 w-5"}
+      style={style}
     >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+      />
+    </svg>
+  );
+};
+
+export const Info = ({ className, style }: Props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className || "h-5 w-5"}
+      style={style}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
       />
     </svg>
   );

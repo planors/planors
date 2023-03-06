@@ -9,6 +9,15 @@ const config = {
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: ["api", "auth", "db"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+      },
+    ],
+  },
 };
 
 export default config;
