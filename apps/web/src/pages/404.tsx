@@ -20,41 +20,53 @@ export default function Page404() {
       <div className="flex w-full flex-col gap-2">
         <Link
           href="/"
-          className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
+          className="flex flex-row items-center justify-between rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
-          <h3 className="font-medium">Home</h3>
-          <p className="text-sm text-zinc-700">Go back to the home page</p>
+          <div>
+            <h3 className="font-medium">Home</h3>
+            <p className="text-sm text-zinc-700">Go back to the home page</p>
+          </div>
+          <ChevronRight />
         </Link>
         <Link
           href="/"
-          className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
+          className="flex flex-row items-center justify-between rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
-          <h3 className="font-medium">Documentation (WIP)</h3>
-          <p className="text-sm text-zinc-700">
-            Learn how to use Planors and its features
-          </p>
+          <div>
+            <h3 className="font-medium">Documentation (WIP)</h3>
+            <p className="text-sm text-zinc-700">
+              Learn how to use Planors and its features
+            </p>
+          </div>
+          <ChevronRight />
         </Link>
         <Link
           href="https://github.com/LukaHietala/planors"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
+          className="flex flex-row items-center justify-between rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
-          <h3 className="font-medium">GitHub</h3>
-          <p className="text-sm text-zinc-700">
-            Open the GitHub repository for Planors
-          </p>
+          <div>
+            <h3 className="font-medium">GitHub</h3>
+            <p className="text-sm text-zinc-700">
+              Open the GitHub repository for Planors
+            </p>
+          </div>
+          <ChevronRight />
         </Link>
         <Link
           href="https://discord.gg/Cb5XdXYSJh"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
+          className="flex flex-row items-center justify-between rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
-          <h3 className="font-medium">Discord</h3>
-          <p className="text-sm text-zinc-700">
-            Join the Discord server for support and updates
-          </p>
+          <div>
+            <h3 className="font-medium">Discord</h3>
+            <p className="text-sm text-zinc-700">
+              Join the Discord server for support and updates
+            </p>
+          </div>
+          <ChevronRight />
         </Link>
       </div>
       <hr className="mb-4 mt-8 border-zinc-200" />
@@ -70,5 +82,24 @@ export default function Page404() {
         </Link>
       </p>
     </main>
+  );
+}
+
+function ChevronRight() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-5 w-5 text-zinc-700"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+      />
+    </svg>
   );
 }
