@@ -11,7 +11,7 @@ export default function Page404() {
     <main style={inter.style} className="mx-auto my-12 max-w-xl text-zinc-900">
       <h1 className="text-center text-2xl font-bold">404 - Page Not Found</h1>
       <p className="text-center text-zinc-800">
-        Sorry, we couldn't find the page you were looking for
+        Sorry, we couldn&apos;t find the page you were looking for
       </p>
       <h2 className="mt-8 mb-1 text-sm font-medium text-zinc-700">
         Popular pages
