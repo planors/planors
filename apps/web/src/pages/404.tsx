@@ -30,7 +30,9 @@ export default function Page404() {
           className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
           <h3 className="font-medium">Documentation (WIP)</h3>
-          <p className="text-sm text-zinc-700">Go to the documentation</p>
+          <p className="text-sm text-zinc-700">
+            Learn how to use Planors and its features
+          </p>
         </Link>
         <Link
           href="https://github.com/LukaHietala/planors"
@@ -40,7 +42,7 @@ export default function Page404() {
         >
           <h3 className="font-medium">GitHub</h3>
           <p className="text-sm text-zinc-700">
-            Go to the GitHub repository of this app
+            Open the GitHub repository for Planors
           </p>
         </Link>
         <Link
@@ -51,7 +53,7 @@ export default function Page404() {
         >
           <h3 className="font-medium">Discord</h3>
           <p className="text-sm text-zinc-700">
-            Go to the Discord server of this app
+            Join the Discord server for support and updates
           </p>
         </Link>
       </div>
