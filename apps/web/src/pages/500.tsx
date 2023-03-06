@@ -5,7 +5,7 @@ const inter = Inter({
   preload: true,
 });
 
-export default function Page404() {
+export default function Page500() {
   return (
     <main style={inter.style} className="mx-auto my-12 max-w-xl text-zinc-900">
       <h1 className="text-center text-2xl font-bold">500 - Server error</h1>
