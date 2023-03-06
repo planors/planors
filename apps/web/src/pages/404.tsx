@@ -34,6 +34,8 @@ export default function Page404() {
         </Link>
         <Link
           href="https://github.com/LukaHietala/planors"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
           <h3 className="font-medium">GitHub</h3>
@@ -43,6 +45,8 @@ export default function Page404() {
         </Link>
         <Link
           href="https://discord.gg/Cb5XdXYSJh"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
         >
           <h3 className="font-medium">Discord</h3>
