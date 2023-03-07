@@ -11,7 +11,7 @@ const Error = ({ error }: { error: string }) => {
           <p className="text-sm text-zinc-600">
             An error occured. Please try again later or open an issue in the{" "}
             <Link
-              href="https://github.com/LukaHietala/planors/issues"
+              href="https://github.com/planors/planors/issues"
               className="text-zinc-600 underline"
             >
               GitHub repository of the app

@@ -1,10 +1,10 @@
-# Planors ([name suggestions still available](https://github.com/LukaHietala/planors/issues/14))
+# Planors ([name suggestions still available](https://github.com/planors/planors/issues/14))
 
 <p>
-  <a href="https://github.com/LukaHietala/planors/blob/main/LICENSE">
+  <a href="https://github.com/planors/planors/blob/main/LICENSE">
     <img alt="This app is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  />
   </a>
-  <a href="https://github.com/LukaHietala/planors/blob/main/CONTRIBUTING.md">
+  <a href="https://github.com/planors/planors/blob/main/CONTRIBUTING.md">
     <img alt="PRs welcome!" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat"  />
   </a>
   <a href="https://discord.gg/Cb5XdXYSJh">
@@ -20,7 +20,7 @@ Open-source app for managing projects and their wikis, roadmaps, todos, etc. Thi
 This project is a monorepo powered by [Turborepo](https://turbo.build/repo) and `pnpm`.
 
 - `apps/web` - Contains the main web application (Next.js)
-- `apps/docs` - Documentation for this project built with Astro ([WIP](https://github.com/LukaHietala/planors/pull/47))
+- `apps/docs` - Documentation for this project built with Astro ([WIP](https://github.com/planors/planors/pull/47))
 
 There are alsome other packages in the `packages` folder, and you can read more about them in the [contributing guidelines](CONTRIBUTING.md) :)
 
@@ -104,4 +104,4 @@ Note: Github Oauth app can only take one redirect- and home URL, so you can't us
 
 ## License
 
-> This app is licensed under the [MIT license](https://github.com/LukaHietala/planors/blob/main/LICENSE)
+> This app is licensed under the [MIT license](https://github.com/planors/planors/blob/main/LICENSE)

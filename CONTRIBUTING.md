@@ -8,7 +8,7 @@ Every contribution will help the project, even if it's just a small wording fix 
 
 ## Issues
 
-If you have found a bug or would like to propose a new feature, [Github Issues](https://github.com/LukaHietala/planors/issues) are the good place to make it public. This project has a issue template to make sure that the issues are detailed enough.
+If you have found a bug or would like to propose a new feature, [Github Issues](https://github.com/planors/planors/issues) are the good place to make it public. This project has a issue template to make sure that the issues are detailed enough.
 
 ## Development workflow
 
@@ -80,7 +80,7 @@ The main web application for the project.
 
 ### `apps/docs` (Coming soon)
 
-This is the documentation site for the project. It's built using Astro and Tailwind. This is the place where you can find all the information about the project, how to use it, how to contribute and so on. [Pull request for the docs](https://github.com/LukaHietala/planors/pull/47)
+This is the documentation site for the project. It's built using Astro and Tailwind. This is the place where you can find all the information about the project, how to use it, how to contribute and so on. [Pull request for the docs](https://github.com/planors/planors/pull/47)
 
 ### `packages/api`
 

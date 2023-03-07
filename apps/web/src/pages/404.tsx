@@ -41,7 +41,7 @@ export default function Page404() {
           <ChevronRight />
         </Link>
         <Link
-          href="https://github.com/LukaHietala/planors"
+          href="https://github.com/planors/planors"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-row items-center justify-between rounded-md border border-zinc-200 p-4 hover:bg-zinc-50"
@@ -73,7 +73,7 @@ export default function Page404() {
       <p className="text-center text-sm text-zinc-800">
         If you think this is a bug, please report it on{" "}
         <Link
-          href="https://github.com/LukaHietala/planors/issues"
+          href="https://github.com/planors/planors/issues"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-500"
