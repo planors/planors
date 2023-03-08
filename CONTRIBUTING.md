@@ -1,8 +1,12 @@
-# Contributing manual
+# Contributing guide
 
 Every contribution will help the project, even if it's just a small wording fix or a big change in core :)
 
+## Useful information
+
 - Make sure that there are no existing issues related to your problem before creating a new issue (check closed ones too), and the same goes for PRs as well
+- Planors does not use `pre-commit` hooks with Husky. All the linting a build validation is done on the CI
+- `e2e` testting is not implemented yet
 
 ## Development Workflow
 
